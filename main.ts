@@ -1,10 +1,12 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 
-const ENTRY = `ellipsigh — noun (eh-LIP-sy)
-The sinking feeling when someone's typing dots appear, linger, then vanish without a reply ever arriving.
-Example: "I watched her ellipsigh for a full minute before the dots disappeared — and I still don't know what she almost said."
+function buildEntryLine() {
+  return `ellipsigh — noun (eh-LIP-sy): the sinking feeling when someone's typing dots appear, linger, then vanish without a reply ever arriving.
 `;
+}
+
+const ENTRY = buildEntryLine();
 
 function resolveOutputPath() {
   if (process.env.MAKEFUN_OUTPUT_DIR) {
